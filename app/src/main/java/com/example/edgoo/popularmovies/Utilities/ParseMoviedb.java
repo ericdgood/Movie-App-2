@@ -1,20 +1,14 @@
 package com.example.edgoo.popularmovies.Utilities;
 
-import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
 
-import static android.content.ContentValues.TAG;
+class ParseMoviedb {
 
-public class ParseMoviedb {
-
-    public static MoviesInfo[] parseMovieJson(String jsonResponse) throws JSONException, IOException {
+    public static MoviesInfo[] parseMovieJson(String jsonResponse) throws JSONException {
 
 //          CREATES JSON OBJECT WITH JSON STRING
         JSONObject mainJsonObject = new JSONObject(jsonResponse);
@@ -58,17 +52,4 @@ public class ParseMoviedb {
     }
 
 
-    public static String parseReview(String reviewJson) throws JSONException {
-
-        JSONObject trailerJsonObject = new JSONObject(reviewJson);
-//        GETS ARRAY OF MOVIE FROM RESULTS FOR TRAILERS
-        JSONArray trailerArray = trailerJsonObject.getJSONArray("results");
-
-        String reviewAuthor = null;
-        for (int i = 0; i < trailerArray.length(); i++) {
-            JSONObject currentReview = trailerArray.getJSONObject(i);
-            reviewAuthor = (currentReview.getString("author"));
-        }
-        return reviewAuthor;
-    }
 }

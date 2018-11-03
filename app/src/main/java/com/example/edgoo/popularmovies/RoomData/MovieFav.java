@@ -2,7 +2,6 @@ package com.example.edgoo.popularmovies.RoomData;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity(tableName = "favorite_movies")
@@ -12,7 +11,7 @@ public class MovieFav {
     private int id;
     private String Title;
     @ColumnInfo(name = "movieId")
-    private String MovieId;
+    private final String MovieId;
     @ColumnInfo(name = "starStatus")
     private int StarStatus;
 
@@ -34,20 +33,12 @@ public class MovieFav {
         return Title;
     }
 
-    public void setTitle(String Title) {
-        this.Title = Title;
-    }
-
     public String getMovieId() {
         return MovieId;
     }
 
     public int getStarStatus() {
         return StarStatus;
-    }
-
-    public void setStarStatus(int starStatus) {
-        StarStatus = starStatus;
     }
 
 }

@@ -1,14 +1,11 @@
 package com.example.edgoo.popularmovies.Utilities;
 
 import android.net.Uri;
-import android.util.Log;
 
 import com.example.edgoo.popularmovies.BuildConfig;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import static android.content.ContentValues.TAG;
 
 public class CreateUrl {
 

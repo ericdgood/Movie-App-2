@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Movie App</string>
-    <string name="error_message">Something went wrong. Try again</string>
     <string name="sort_by_popular_movie">Sort by Popular Movie</string>
     <string name="sort_by_top_rated_movies">Sort by Top Rated Movies</string>
     <string name="rating">Rating:</string>
@@ -11,17 +10,13 @@
     <string name="ratings_parm">top_rated</string>
     <string name="popular_parm">popular</string>
     <string name="_10">/10</string>
-    <string name="trailer">Trailer</string>
-    <string name="play_trailer">Play Trailer</string>
-    <string name="play_button">Play button</string>
     <string name="no_reviews">No Reviews</string>
     <string name="no_trailers">No Trailers</string>
     <string name="reviews">Reviews</string>
     <string name="trailers">Trailers</string>
     <string name="fav">Favorite</string>
     <string name="favorite_movies">Favorite Movies</string>
-    <string name="moive_id">Movie Id</string>
-    <string name="movie_title">Movie Title</string>
+    <string name="favorite_star">Favorite Star</string>
 
 
 </resources>

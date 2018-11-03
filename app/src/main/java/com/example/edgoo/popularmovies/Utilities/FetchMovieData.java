@@ -1,24 +1,14 @@
 package com.example.edgoo.popularmovies.Utilities;
 
-import android.net.Uri;
 import android.os.AsyncTask;
-import android.util.Log;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.edgoo.popularmovies.MovieAdapter;
-import com.example.edgoo.popularmovies.MovieDetails;
-import com.example.edgoo.popularmovies.R;
 
 import org.json.JSONException;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import static android.content.ContentValues.TAG;
 
 public class FetchMovieData extends AsyncTask<String, Void, MoviesInfo[]> {
 

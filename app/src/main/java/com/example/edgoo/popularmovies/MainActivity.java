@@ -1,34 +1,23 @@
 package com.example.edgoo.popularmovies;
 
-import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.TextView;
 
-import com.example.edgoo.popularmovies.RoomData.AppDatabase;
 import com.example.edgoo.popularmovies.RoomData.MovieFav;
 import com.example.edgoo.popularmovies.Utilities.FetchMovieData;
 import com.example.edgoo.popularmovies.Utilities.MoviesInfo;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private MovieAdapter mMovieAdapter;
     private String mParm = "popular";
-    MoviesInfo[] mMovies;
-    private List<MovieFav> favMovies;
+    private MoviesInfo[] mMovies;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

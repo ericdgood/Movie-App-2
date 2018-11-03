@@ -17,9 +17,9 @@ import java.util.List;
 public class FavoriteMovieList extends AppCompatActivity {
 
 
-    List<MovieFav> favMovieList = new ArrayList<>();
-    RecyclerView RecyclerView;
-    RecyclerView.Adapter adapter;
+    private List<MovieFav> favMovieList = new ArrayList<>();
+    private RecyclerView RecyclerView;
+    private RecyclerView.Adapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

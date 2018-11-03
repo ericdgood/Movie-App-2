@@ -1,6 +1,5 @@
 package com.example.edgoo.popularmovies;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,7 +13,7 @@ import java.util.List;
 
 class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHolder> {
 
-    private List<MovieFav> favMovies;
+    private final List<MovieFav> favMovies;
 
     FavoriteAdapter(List<MovieFav> favMovieList) {
         this.favMovies = favMovieList;
@@ -40,8 +39,8 @@ class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHolder> {
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView movieTitle;
-        TextView movieId;
+        final TextView movieTitle;
+        final TextView movieId;
 
         ViewHolder(View view) {
             super(view);

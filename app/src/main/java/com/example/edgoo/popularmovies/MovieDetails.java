@@ -1,12 +1,12 @@
 package com.example.edgoo.popularmovies;
 
+import android.annotation.SuppressLint;
 import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +28,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.List;
 
 public class MovieDetails extends AppCompatActivity {
 
@@ -40,7 +39,6 @@ public class MovieDetails extends AppCompatActivity {
     private LinearLayout mReviewList;
     private ImageView mStar;
     private int StarStatus = 0;
-    private String TAG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +57,8 @@ public class MovieDetails extends AppCompatActivity {
     }
 
     //    TRAILER INFO IS FETCHED AND POPULATED
-    public class TrailerAsync extends AsyncTask<String, Void, String> {
+    @SuppressLint("StaticFieldLeak")
+    class TrailerAsync extends AsyncTask<String, Void, String> {
 
         private final String mMovieId;
 
@@ -91,7 +90,7 @@ public class MovieDetails extends AppCompatActivity {
         }
     }
 
-    public static void parseMovieTrailers(String trailerJson) throws JSONException {
+    private static void parseMovieTrailers(String trailerJson) throws JSONException {
 
         JSONObject trailerJsonObject = new JSONObject(trailerJson);
 //        GETS ARRAY OF MOVIE FROM RESULTS FOR TRAILERS
@@ -105,7 +104,7 @@ public class MovieDetails extends AppCompatActivity {
         }
     }
 
-    public void populateTrailerInfo() {
+    private void populateTrailerInfo() {
 
         if (mTrailerKey.length == 0) {
             LinearLayout trailerItem = new LinearLayout(this);
@@ -136,7 +135,7 @@ public class MovieDetails extends AppCompatActivity {
     }
 
 
-    public void watchYoutubeVideo(String movieKey) {
+    private void watchYoutubeVideo(String movieKey) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + movieKey));
         startActivity(intent);
     }
@@ -158,7 +157,8 @@ public class MovieDetails extends AppCompatActivity {
 
 //    REVIEWS ARE FETCHED AND POPULATED
 
-    public class ReviewAsync extends AsyncTask<String, Void, String> {
+    @SuppressLint("StaticFieldLeak")
+    class ReviewAsync extends AsyncTask<String, Void, String> {
 
         private final String mMovieId;
 
@@ -190,7 +190,7 @@ public class MovieDetails extends AppCompatActivity {
         }
     }
 
-    public static void parseReview(String reviewJson) throws JSONException {
+    private static void parseReview(String reviewJson) throws JSONException {
 
         JSONObject reviewJsonObject = new JSONObject(reviewJson);
 //        GETS ARRAY OF MOVIE FROM RESULTS FOR TRAILERS
